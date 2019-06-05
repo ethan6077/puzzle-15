@@ -10,9 +10,8 @@
 
   .frame {
     background-color: $frame-background;
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
+    height: 60vh;
+    width: 60vw;
 
     .row {
       display: flex;
@@ -20,7 +19,16 @@
 
       .tile {
         flex: 1;
-        background-color: $tile;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        height: 18vh;
+        width: 18vw;
+        color: $tile;
+        border: solid;
+        border-color: $tile;
+        border-width: 1vh 1vw;
       }
 
     }
