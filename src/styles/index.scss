@@ -14,9 +14,8 @@ code {
     monospace;
 }
 
-
 html { 
-  background-color: $background-color;
+  background-color: $app-background;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
