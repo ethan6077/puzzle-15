@@ -4,5 +4,23 @@
   font-size: calc(10px + 10vmin);
   background-color: $frame-background;
   height: 60vh;
-  width: 60vw;
+  width: 90vw;
+}
+
+@media (min-width: 500px) {
+  .frame {
+    font-size: calc(10px + 10vmin);
+    background-color: $frame-background;
+    height: 60vh;
+    width: 80vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .frame {
+    font-size: calc(10px + 10vmin);
+    background-color: $frame-background;
+    height: 60vh;
+    width: 60vw;
+  }
 }
