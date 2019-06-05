@@ -12,7 +12,10 @@ class Frame extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { changePuzzleStatus } = this.props;
+    const { changePuzzleStatus, isPuzzleDone } = this.props;
+    if (isPuzzleDone) {
+      return;
+    }
     const isFrameDone = this.state.tileValues.every((val, index) => {
       return (val === this.state.doneValues[index])
     });

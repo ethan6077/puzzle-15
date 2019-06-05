@@ -20,8 +20,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {this.state.isPuzzleDone === 'done' ? <Header /> : null}
-        <Frame changePuzzleStatus={this.changePuzzleStatus} />
+        {this.state.isPuzzleDone ? <Header /> : null}
+        <Frame
+          changePuzzleStatus={this.changePuzzleStatus}
+          isPuzzleDone={this.state.isPuzzleDone}
+        />
       </div>
     );
   }
