@@ -7,7 +7,18 @@ class Frame extends React.Component {
     super(props);
     this.state = {
       tileValues: getRandomArray(1, 9),
+      doneValues: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { changePuzzleStatus } = this.props;
+    const isFrameDone = this.state.tileValues.every((val, index) => {
+      return (val === this.state.doneValues[index])
+    });
+    if (isFrameDone) {
+      changePuzzleStatus();
+    }
   }
 
   moveTile = (value) => {
@@ -36,9 +47,7 @@ class Frame extends React.Component {
   }
 
   render() {
-    console.log('tileValues --->', this.state.tileValues);
     const numberOfRows = Math.sqrt(this.state.tileValues.length);
-    console.log('numberOfRows --->', numberOfRows);
     // in the frame, numberOfRows is always equal to the numberOfColumns
     return (
       <div className="frame">

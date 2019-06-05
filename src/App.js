@@ -1,12 +1,27 @@
 import React from 'react';
+import Header from './components/Header';
 import Frame from './components/Frame';
 import './styles/App.scss';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isPuzzleDone: false,
+    };
+  }
+
+  changePuzzleStatus = () => {
+    this.setState({
+      isPuzzleDone: !this.state.isPuzzleDone,
+    });
+  }
+
   render() {
     return (
       <div className="app">
-        <Frame />
+        {this.state.isPuzzleDone === 'done' ? <Header /> : null}
+        <Frame changePuzzleStatus={this.changePuzzleStatus} />
       </div>
     );
   }

@@ -4,7 +4,6 @@ import classNames from 'classnames';
 class Tile extends React.Component {
   _onDragStart = (e) => {
     const { value } = this.props;
-    console.log('_onDragStart')
     e.dataTransfer.dropEffect = "move";
     e.dataTransfer.setData('value', value);
   }
@@ -15,10 +14,8 @@ class Tile extends React.Component {
 
   _onDrop = (e) => {
     const { value, moveTile } = this.props;
-    console.log('_onDrop');
     if (value === 9) {
       const valueToDrop = parseInt(e.dataTransfer.getData('value'));
-      console.log(valueToDrop);
       moveTile(valueToDrop);
     }
   }

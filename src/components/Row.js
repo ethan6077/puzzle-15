@@ -9,7 +9,6 @@ function renderTiles(rowValues, moveTile) {
 
 function Row(props) {
   const { rowValues, moveTile } = props;
-  console.log('rowValues -->', rowValues);
   return (
     <div className="row">
       {renderTiles(rowValues, moveTile)}
