@@ -1,12 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
+import { checkIfTileClose } from '../utils';
 import '../styles/tile.scss';
 
 class Tile extends React.Component {
   _onDragStart = (e) => {
-    const { value } = this.props;
+    const { value, rowNumber, columnNumber } = this.props;
     e.dataTransfer.dropEffect = "move";
     e.dataTransfer.setData('value', value);
+    e.dataTransfer.setData('rowNumber', rowNumber);
+    e.dataTransfer.setData('columnNumber', columnNumber);
   }
 
   _onDragOver = (e) => {
@@ -14,10 +17,15 @@ class Tile extends React.Component {
   }
 
   _onDrop = (e) => {
-    const { value, moveTile } = this.props;
+    const { moveTile, value, rowNumber, columnNumber } = this.props;
     if (value === 9) {
-      const valueToDrop = parseInt(e.dataTransfer.getData('value'));
-      moveTile(valueToDrop);
+      const valueNew = parseInt(e.dataTransfer.getData('value'));
+      const rowNumberNew = parseInt(e.dataTransfer.getData('rowNumber'));
+      const columnNumberNew = parseInt(e.dataTransfer.getData('columnNumber'));
+      if (checkIfTileClose([rowNumberNew, columnNumberNew], [rowNumber, columnNumber])) {
+        // only the tile close to the target tile can be dropped
+        moveTile(valueNew);
+      }
     }
   }
 

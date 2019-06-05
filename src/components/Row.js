@@ -2,17 +2,25 @@ import React from 'react';
 import Tile from './Tile';
 import '../styles/row.scss';
 
-function renderTiles(rowValues, moveTile) {
-  return rowValues.map((val) => {
-    return <Tile key={val} value={val} moveTile={moveTile} />
+function renderTiles(moveTile, rowNumber, rowValues) {
+  return rowValues.map((val, index) => {
+    return (
+      <Tile
+        key={val}
+        moveTile={moveTile}
+        value={val}
+        rowNumber={rowNumber}
+        columnNumber={index + 1}
+      />
+    );
   });
 }
 
 function Row(props) {
-  const { rowValues, moveTile } = props;
+  const { moveTile, rowNumber, rowValues } = props;
   return (
     <div className="row">
-      {renderTiles(rowValues, moveTile)}
+      {renderTiles(moveTile, rowNumber, rowValues)}
     </div>
   );
 }

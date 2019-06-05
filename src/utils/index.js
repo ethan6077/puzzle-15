@@ -16,3 +16,11 @@ export function getRandomArray(min, max) {
   }
   return array;
 }
+
+export function checkIfTileClose([rowA, colA], [rowB, colB]) {
+  if ( (rowA === rowB && (Math.abs(colA - colB) === 1)) || (colA === colB && (Math.abs(rowA - rowB) === 1)) ) {
+    return true;
+  } else {
+    return false;
+  }
+}

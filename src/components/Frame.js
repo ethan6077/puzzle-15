@@ -43,9 +43,9 @@ class Frame extends React.Component {
   renderRows(tileValues, numberOfRows) {
     return (
       <React.Fragment>
-        <Row key={1} rowValues={tileValues.slice(0, numberOfRows)} moveTile={this.moveTile} />
-        <Row key={2} rowValues={tileValues.slice(numberOfRows, numberOfRows * 2)} moveTile={this.moveTile} />
-        <Row key={3} rowValues={tileValues.slice(numberOfRows * 2, numberOfRows * 3)} moveTile={this.moveTile} />
+        <Row key={1} moveTile={this.moveTile} rowNumber={1} rowValues={tileValues.slice(0, numberOfRows)} />
+        <Row key={2} moveTile={this.moveTile} rowNumber={2} rowValues={tileValues.slice(numberOfRows, numberOfRows * 2)} />
+        <Row key={3} moveTile={this.moveTile} rowNumber={3} rowValues={tileValues.slice(numberOfRows * 2, numberOfRows * 3)} />
       </React.Fragment>
     );
   }
