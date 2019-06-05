@@ -17,7 +17,7 @@
       display: flex;
       flex-direction: row;
 
-      .tile {
+      %tile {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -25,10 +25,54 @@
         background-color: transparent;
         height: 18vh;
         width: 18vw;
-        color: $tile;
+        font-weight: bold;
         border: solid;
-        border-color: $tile;
         border-width: 1vh 1vw;
+      }
+      .tile1 {
+        @extend %tile;
+        color: $tile1;
+        border-color: $tile1;
+      }
+      .tile2 {
+        @extend %tile;
+        color: $tile2;
+        border-color: $tile2;
+      }
+      .tile3 {
+        @extend %tile;
+        color: $tile3;
+        border-color: $tile3;
+      }
+      .tile4 {
+        @extend %tile;
+        color: $tile4;
+        border-color: $tile4;
+      }
+      .tile5 {
+        @extend %tile;
+        color: $tile5;
+        border-color: $tile5;
+      }
+      .tile6 {
+        @extend %tile;
+        color: $tile6;
+        border-color: $tile6;
+      }
+      .tile7 {
+        @extend %tile;
+        color: $tile7;
+        border-color: $tile7;
+      }
+      .tile8 {
+        @extend %tile;
+        color: $tile8;
+        border-color: $tile8;
+      }
+      .tile9 {
+        @extend %tile;
+        color: $tile9;
+        border-color: $tile9;
       }
 
     }
