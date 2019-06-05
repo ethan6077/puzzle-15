@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import '../styles/tile.scss';
 
 class Tile extends React.Component {
   _onDragStart = (e) => {

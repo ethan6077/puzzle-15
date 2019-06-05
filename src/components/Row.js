@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from './Tile';
+import '../styles/row.scss';
 
 function renderTiles(rowValues, moveTile) {
   return rowValues.map((val) => {

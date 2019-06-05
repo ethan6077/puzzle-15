@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Frame from './components/Frame';
-import './styles/App.scss';
+import './styles/app.scss';
 
 class App extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from './Row';
 import { getRandomArray } from '../utils';
+import '../styles/frame.scss';
 
 class Frame extends React.Component {
   constructor(props) {

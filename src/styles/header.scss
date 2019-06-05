@@ -1,0 +1,17 @@
+@import 'colors';
+
+.header {
+  font-size: calc(5px + 5vmin);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5vh;
+  span {
+    margin-bottom: 2vh;
+  }
+  button {
+    font-size: calc(3px + 3vmin);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 2rem;
+  }
+}
