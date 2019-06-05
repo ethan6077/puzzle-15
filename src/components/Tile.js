@@ -2,9 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 
 function Tile(props) {
-  const { value } = props;
+  const { value, moveTile } = props;
   return (
-    <div className={classNames({
+    <div
+      onClick={() => moveTile(value)}
+      className={classNames({
       'tile1': value === 1,
       'tile2': value === 2,
       'tile3': value === 3,
@@ -14,7 +16,8 @@ function Tile(props) {
       'tile7': value === 7,
       'tile8': value === 8,
       'tile9': value === 9,
-    })}>
+      })}
+    >
       {value}
     </div>
   );
