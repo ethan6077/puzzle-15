@@ -40,7 +40,7 @@ class Tile extends React.Component {
         'tile9': value === 9,
         })}
       >
-        {value}
+        {value === 9 ? null : value}
       </div>
     );
   }
