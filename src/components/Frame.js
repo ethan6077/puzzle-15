@@ -1,5 +1,5 @@
 import React from 'react';
-import Tile from './Tile';
+import Row from './Row';
 import { getRandomArray } from '../utils';
 
 class Frame extends React.Component {
@@ -10,17 +10,24 @@ class Frame extends React.Component {
     };
   }
 
-  renderTiles(tileValues) {
-    return tileValues.map((val) => {
-      return <Tile key={val} value={val} />
-    });
+  renderRows(tileValues, numberOfRows) {
+    return (
+      <React.Fragment>
+        <Row key={1} rowValues={tileValues.slice(0, numberOfRows)} />
+        <Row key={2} rowValues={tileValues.slice(numberOfRows, numberOfRows * 2)} />
+        <Row key={3} rowValues={tileValues.slice(numberOfRows * 2, numberOfRows * 3)} />
+      </React.Fragment>
+    );
   }
 
   render() {
     console.log('tileValues --->', this.state.tileValues);
+    const numberOfRows = Math.sqrt(this.state.tileValues.length);
+    console.log('numberOfRows --->', numberOfRows);
+    // in the frame, numberOfRows is always equal to the numberOfColumns
     return (
       <div className="frame">
-        {this.renderTiles(this.state.tileValues)}
+        {this.renderRows(this.state.tileValues, numberOfRows)}
       </div>
     );
   }

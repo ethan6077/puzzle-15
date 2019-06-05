@@ -6,8 +6,9 @@ export function getRandomIntInclusive(min, max) {
 
 // returns a random array with non-duplicated values from min to max
 export function getRandomArray(min, max) {
-  const array = new Array();
-  while (array.length < 8) {
+  const array = [];
+  const arrayMaxLength = max - min + 1;
+  while (array.length < arrayMaxLength) {
     const val = getRandomIntInclusive(min, max);
     if (!array.find(v => v ===val)) {
       array.push(val);
